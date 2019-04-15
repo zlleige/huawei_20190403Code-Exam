@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_01_subString", "_01_subString\_01_subString.vcproj", "{4EC60544-8A31-4643-B6D9-0A5013F5AA68}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_02InputString", "_02InputString\_02InputString.vcproj", "{306C20CA-A82E-4273-9B86-C621C15D9678}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EC60544-8A31-4643-B6D9-0A5013F5AA68}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4EC60544-8A31-4643-B6D9-0A5013F5AA68}.Debug|Win32.Build.0 = Debug|Win32
+		{4EC60544-8A31-4643-B6D9-0A5013F5AA68}.Release|Win32.ActiveCfg = Release|Win32
+		{4EC60544-8A31-4643-B6D9-0A5013F5AA68}.Release|Win32.Build.0 = Release|Win32
+		{306C20CA-A82E-4273-9B86-C621C15D9678}.Debug|Win32.ActiveCfg = Debug|Win32
+		{306C20CA-A82E-4273-9B86-C621C15D9678}.Debug|Win32.Build.0 = Debug|Win32
+		{306C20CA-A82E-4273-9B86-C621C15D9678}.Release|Win32.ActiveCfg = Release|Win32
+		{306C20CA-A82E-4273-9B86-C621C15D9678}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
