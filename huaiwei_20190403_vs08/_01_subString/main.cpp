@@ -38,24 +38,42 @@ void PrintVector( vector<vector<int>>  &vDate,string slip)
 	}
 }
 
+
 //打印数据
-void PrintVector( vector<vector<int>>  &vDate)
+void PrintVector( vector<vector<int>>  &vDate,int count=3,string split=",")
 {
 	int group=vDate.size(); //获得输入的数据组数
 	if(group <= 0) return;
-	bool isOver=
-	for(int i=0;i< group;i++) 
+	//可以遍历列i，每次输出3*i,3*i+1,3*i+2,直到每个行的数据为空
+	int column=0;  //记录列索引
+	unsigned int rowFlag=0; //用于判断每行数据是否输出完成 直到 rowFlag=vDate.size()
+	vector<bool> isOutOver(group,false); //每行数据是否输出完成
+	while(rowFlag < vDate.size()) 
 	{
-
-	}
-	for(vector<vector<int>>::iterator v_it=vDate.begin();v_it!=vDate.end();v_it++)
-	{
-		for(vector<int>::iterator it=v_it->begin();it!=v_it->end();it++)
+		//遍历行
+		for(int i=0;i< group;i++) 
 		{
-			cout << *it<<slip;
+			if(!isOutOver.at(i)) //检查是否输出完成
+			{
+				int nums=vDate.at(i).size()-column; //当前行剩余数据
+				if(nums<=3)  
+				{
+					isOutOver[i]=true;		//清空标志
+					rowFlag++;
+				}
+				else nums=3;						//有余量 输出三个
+				//输出数据
+				for(int j=0;j<nums;j++)
+				{
+					cout<<vDate.at(i).at(column+j);
+					//如果当前行还有余量（>count ）或者当前行输出完成但是总体未完成，应该输出分号
+					if(column+j < vDate.at(i).size()-1||isOutOver[i] && rowFlag< vDate.size())  cout<<split;
+				}
+			}
 		}
-		cout <<endl;
+		column+=count; //列索引加
 	}
+	cout<<endl; //输出完成换行
 }
 
 int main() 
@@ -76,13 +94,10 @@ int main()
 			stringstream  input(strInput);
 			while(getline(input,strTemp,',')) vTemp.push_back(atoi(strTemp.c_str())); //strTemp存数据
 			vDate.push_back(vTemp);
-			
-			PrintVector(vDate," "); //测试打印所有数据
+			//PrintVector(vDate," "); //测试打印所有数据
 			//打印输出
-			
-			
+			PrintVector(vDate,count,",");
 		}
-			
 	}
 	system("pause");
 	return 0;
