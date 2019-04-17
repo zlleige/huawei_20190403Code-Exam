@@ -56,12 +56,12 @@ void PrintVector( vector<vector<int>>  &vDate,int count=3,string split=",")
 			if(!isOutOver.at(i)) //检查是否输出完成
 			{
 				int nums=vDate.at(i).size()-column; //当前行剩余数据
-				if(nums<=3)  
+				if(nums<=count)  
 				{
 					isOutOver[i]=true;		//清空标志
 					rowFlag++;
 				}
-				else nums=3;						//有余量 输出三个
+				else nums=count;						//有余量 输出三个
 				//输出数据
 				for(int j=0;j<nums;j++)
 				{
@@ -92,6 +92,7 @@ int main()
 			vTemp.clear();
 			//分割字符串，得到整数
 			stringstream  input(strInput);
+			//strInput.clear();
 			while(getline(input,strTemp,',')) vTemp.push_back(atoi(strTemp.c_str())); //strTemp存数据
 			vDate.push_back(vTemp);
 			//PrintVector(vDate," "); //测试打印所有数据
